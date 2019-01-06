@@ -1,0 +1,10 @@
+link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
+
+
+block content
+    .container
+    each items in item
+        p= "you can not delate this because" 
+        li=items.Name
+        a.btn.btn-primary(href="/") Back
+

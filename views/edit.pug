@@ -1,0 +1,25 @@
+link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
+
+
+block content
+    .container
+        h1 Edit Menu
+        form(action="/item/" + item.ID, method="post")
+            .form-group
+                lable Name
+                input.form-control(type="text",name="Name",value=item.Name)
+            .form-group
+                lable Recipe
+                input.form-control(type="text",name="Recipe",value=item.Recipe)
+            .form-group
+                lable Country
+                input.form-control(type="text",name="Country",value=item.Country)
+            .form-group 
+                lable Description
+                input.form-control(type="text",name="Description",value=item.Description)
+            .form-group
+                lable Taste
+                select.form-control(name="Taste")  
+                    option(value=item.ID)= item.taste
+            button.btn.btn-primary(type="submit") Save
+            

@@ -1,0 +1,26 @@
+link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
+
+block content
+    h1 Details
+    table.table.table-bordered.table-striped
+      thead
+        th
+          | Name  
+        th
+          | Recipe   
+        th
+          | Country  
+        th
+          |  Taste 
+        th
+          | Desctiption        
+      tbody
+        each item in items
+          tr
+            td=item.Name 
+            td=item.Recipe
+            td=item.Country
+            td=item.taste
+            td=item.Description
+            a.btn.btn-danger(href="/item/" + item.ID + "/delete") Delete
+            a.btn.btn-primary(href="/item/" + item.ID) Edit

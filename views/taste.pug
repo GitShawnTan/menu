@@ -1,0 +1,20 @@
+link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
+
+block content
+    h1 Taste
+    table.table.table-bordered.table-striped
+        thead
+            th
+            | Name  
+            th 
+            | Action      
+        tbody
+            each item in rows
+                tr
+                    td=item.taste
+                    td 
+                        a.btn.btn-danger(href="/taste/" + item.ID + "/delete") Delete
+                    td
+                        a.btn.btn-primary(href="/taste/" + item.ID) Edit
+
+                

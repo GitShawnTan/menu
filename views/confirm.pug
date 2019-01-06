@@ -1,0 +1,7 @@
+link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
+
+each items in item
+    p Are you sure you want to delete
+    form(action="/item/" + items.ID + "/delete",method="post")
+        button(type="submit") Yes
+    a.btn.btn-primary(href="/") Cancle

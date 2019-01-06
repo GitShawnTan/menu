@@ -1,0 +1,65 @@
+
+
+link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
+
+block content
+    h1.font-weight-bold
+        | Menu 
+    a.btn.btn-success(href="/create" ) Create new
+    a.btn.btn-info(href="/createtaste") Create new taste
+      
+   
+    
+    form(action="/", method="get")
+      input(type="text",name="e")
+      button.btn.btn-primary.btn-sm(type="submit") Submit
+    
+    
+    table.table.table-bordered.table-striped
+      thead
+        th
+         if(sort == "Name" && order == "DESC")
+           a(href="?sort=Name") Name
+         else
+           a(href="?sort=Name&order=DESC") Name
+         form(action="/", method="get")
+              input(type="text",name="q")
+              button.btn.btn-primary.btn-sm(type="submit") Submit   
+        th
+          | Recipe  
+          form(action="/", method="get")
+            input(type="text",name="w")
+            button.btn.btn-primary.btn-sm(type="submit") Submit 
+
+        th
+          | Country  
+          form(action="/", method="get")
+            input(type="text",name="e")
+            button.btn.btn-primary.btn-sm(type="submit") Submit
+        th
+          | Taste 
+          form(action="/", method="get")
+            input(type="text",name="r")
+            button.btn.btn-primary.btn-sm(type="submit") Submit
+
+        th
+          | Action
+        
+      tbody
+        each item in items
+          tr
+            td 
+             a(href="/item/" + item.ID)= item.Name 
+            td=item.Recipe
+            td=item.Country
+            td=item.taste
+            td
+              a.btn.btn-danger(href="/item/" + item.ID + "/delete") Delete
+              a.btn.btn-primary(href="/item/" + item.ID + "/detail") View
+              a.btn.btn-info(href="/item/" + item.ID) Edit
+            
+
+
+
+
+

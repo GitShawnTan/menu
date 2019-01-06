@@ -1,0 +1,27 @@
+link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
+
+
+block content
+    .container
+        h1 Create Menu
+        form(action="/create", method="post")
+            .form-group
+                lable Name
+                input.form-control(type="text",name="Name")
+            .form-group
+                lable Recipe
+                input.form-control(type="text",name="Recipe")
+            .form-group
+                lanle Country
+                input.form-control(type="text",name="Country")
+            .form-group
+                lanle Description
+                input.form-control(type="text",name="Description")
+            .form-group
+                lable Taste
+                select.form-control(name="Taste")  
+                    each row in rows
+                        option(value=row.ID)= row.taste
+                button.btn.btn-primary(type="submit") Create
+
+            
